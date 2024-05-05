@@ -1,10 +1,8 @@
 package db;
 
 import model.User;
-import util.MaHoa;
+import util.HashPassword;
 import vn.fit.nlu.gk.db.JDBIConnector;
-
-import java.util.Optional;
 
 public class UserDAO implements IDAO<User>{
     @Override
@@ -15,7 +13,7 @@ public class UserDAO implements IDAO<User>{
                         .bind(0, model.getId())
                         .bind(1, model.getName())
                         .bind(2, model.getEmail())
-                        .bind(3, MaHoa.toSHA1(model.getPassword()))
+                        .bind(3, HashPassword.toSHA1(model.getPassword()))
                         .execute()
         );
     }

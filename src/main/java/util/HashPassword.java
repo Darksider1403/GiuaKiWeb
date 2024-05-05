@@ -3,7 +3,7 @@ package util;
 import java.security.MessageDigest;
 import java.util.Base64;
 
-public class MaHoa {
+public class HashPassword {
 
     public static String toSHA1(String str) {
         String salt = "askpljodhaojs1!@#--124";
